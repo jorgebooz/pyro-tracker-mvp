@@ -1,0 +1,6 @@
+[theme]
+base="dark"
+primaryColor="#F78F4A"      # Cor principal (laranja)
+secondaryBackgroundColor="#627860"  # Verde (usado como fundo secundário)
+textColor="#ffffff"         # Preto padrão para legibilidade
+font="sans-serif"
