@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import os
 from services.proteger_alerta_zero import garantir_alerta_zero
+import random
 
 def render():
     st.title("🚒 Painel de Despacho de Equipes")
@@ -63,7 +64,15 @@ def render():
         st.info("Nenhum alerta ativo no momento.")
         return
 
-    mapa_mock = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Santo_Andr%C3%A9,_S%C3%A3o_Paulo_location_map.svg/1200px-Santo_Andr%C3%A9,_S%C3%A3o_Paulo_location_map.svg.png"
+    mapa_mock = None
+# Lógica para imagens aleatórias
+    imagens_alerta_path = os.path.join(base_path, "images", "alerts")
+    imagens_disponiveis = sorted([
+        os.path.join(imagens_alerta_path, img) for img in os.listdir(imagens_alerta_path)
+        if img.endswith((".png", ".jpg", ".jpeg"))
+    ])
+    random.shuffle(imagens_disponiveis)
+    imagem_idx = 0
 
     st.write("### Alertas Ativos e Equipes Designadas")
     colunas = st.columns(4)
@@ -103,13 +112,11 @@ def render():
                 else:
                     st.write(f"🔔 Alerta: #{id_alerta} | Região: {regiao}")
 
-                if id_alerta == 1:
-                    if os.path.exists(imagem_local_path):
-                        st.image(imagem_local_path, caption="Mapa do alerta #1", use_container_width=True)
-                    else:
-                        st.warning("⚠️ Imagem local do alerta #1 não encontrada.")
+                if imagem_idx < len(imagens_disponiveis):
+                    st.image(imagens_disponiveis[imagem_idx], caption=f"Mapa do alerta #{id_alerta}", use_container_width=True)
+                    imagem_idx += 1
                 else:
-                    st.image(mapa_mock, caption=f"Local do alerta #{id_alerta}", use_container_width=True)
+                    st.warning("⚠️ Sem imagens suficientes para todos os alertas.")
 
             equipe_idx = equipes_df[equipes_df['nome_equipe'] == equipe['nome_equipe']].index[0]
             equipes_df.at[equipe_idx, 'disponivel'] = 0

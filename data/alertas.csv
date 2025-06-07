@@ -1,3 +1,3 @@
 id,latitude,longitude,criticidade,descricao,vegetacao,temperatura,umidade,vento,timestamp,datahora
 0,0.0,0.0,0,0.0,0,0,0,2025-06-06T23:24:54.099881,,
-2,-23.703197,-46.481933,PEQUENO,,Centro,27,23,16,2025-06-06T23:28:52.544318,2025-06-06 23:28:52.544318
+3,-23.721488,-46.518628,PEQUENO,,Periferia,16,21,20,2025-06-07T00:48:18.962673,2025-06-07 00:48:18.962673

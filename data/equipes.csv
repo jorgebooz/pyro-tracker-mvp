@@ -1,6 +1,6 @@
 nome_equipe,regiao,especialidade,disponivel,id_alerta
-bombeiros-1,Subúrbio,Subúrbio,1,
-bombeiros-2,Periferia,Periferia,1,
+bombeiros-1,Subúrbio,Subúrbio,0,0.0
+bombeiros-2,Periferia,Periferia,0,3.0
 bombeiros-3,Centro,Centro,0,2.0
 bombeiros-4,Zona Industrial,Zona Industrial,1,
 bombeiros-5,Zona Rural,Zona Rural,1,
