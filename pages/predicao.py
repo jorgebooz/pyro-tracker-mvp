@@ -1,5 +1,7 @@
 
 def prever_propagacao(temp, umidade, vento, vegetacao):
+    import streamlit as st
+
     risco = (temp * 0.4 + vento * 0.4) - (umidade * 0.2)
     if vegetacao == "Zona Rural":
         risco *= 1.5

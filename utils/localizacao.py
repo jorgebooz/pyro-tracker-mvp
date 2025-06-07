@@ -1,5 +1,7 @@
 
 import random
+import streamlit as st
+
 
 def obter_localizacao_mock():
     return {

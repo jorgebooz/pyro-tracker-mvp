@@ -1,3 +1,4 @@
+import streamlit as st
 
 def prever_propagacao(temp, umidade, vento, vegetacao):
     risco = (temp * 0.4 + vento * 0.4) - (umidade * 0.2)

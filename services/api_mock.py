@@ -1,5 +1,7 @@
 
 import random
+import streamlit as st
+
 
 def buscar_dados_ambientais(localizacao):
     return {

@@ -1,6 +1,8 @@
 import pandas as pd
 from datetime import datetime
 import os
+import streamlit as st
+
 
 def garantir_alerta_zero(path_csv):
     if not os.path.exists(path_csv):
