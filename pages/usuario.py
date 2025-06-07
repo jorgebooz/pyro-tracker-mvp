@@ -94,10 +94,13 @@ def render():
         lon_min, lon_max = -46.57, -46.48
 
         df_ativos = df[
-            (df['id'] != 0) &
-            (df['timestamp'] >= limite) &
-            (df['latitude'] >= lat_min) & (df['latitude'] <= lat_max) &
-            (df['longitude'] >= lon_min) & (df['longitude'] <= lon_max)
+            df_ativos = df[
+                ((df['id'] != 0) &
+                (df['timestamp'] >= limite) &
+                (df['latitude'] >= lat_min) & (df['latitude'] <= lat_max) &
+                (df['longitude'] >= lon_min) & (df['longitude'] <= lon_max))
+]
+
         ]
 
         if not df_ativos.empty:
