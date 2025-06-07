@@ -100,7 +100,6 @@ def render():
             (df['longitude'] >= lon_min) & (df['longitude'] <= lon_max))
         ]
 
-        ]
 
         if not df_ativos.empty:
             st.subheader("🔥 Focos de Incêndio Ativos Próximos")
